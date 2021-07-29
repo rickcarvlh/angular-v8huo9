@@ -1,0 +1,24 @@
+    <form class="kt-form" [formGroup]="customerForm" *ngIf="customerForm">
+		<div class="kt-portlet__body">
+			<div class="form-group kt-form__group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<div class="row">
+						<div class="col-md-12">
+							<label class="float-left">Available Sizes</label>
+						</div>
+					</div>
+
+					
+                    <div class="row">
+                        <label formArrayName="musicPreferences" *ngFor="let genre of customerForm.controls['musicPreferences'].controls; let i = index">
+                            <input type="checkbox" [formControlName]="i">
+                            {{ResultData[i].sizeName}}
+                        </label>
+                    </div>
+				</div>
+				
+			</div>
+			
+		</div>
+      
+    </form>
